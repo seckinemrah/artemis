@@ -3,6 +3,6 @@ from flask import render_template
 app = Flask(__name__)
 @app.route('/')
 def index():
-    return 'Welcome to Artemis E-commerse web application.'
+    return 'Welcome to Artemis E-commerce web application'
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
