@@ -45,7 +45,8 @@ def slavePodTemplate = """
     } else if (branch.contains('qa-feature')) {
       environment = "qa"
     }
-  
+    
+    println ("${environment}")
 
 
     podTemplate(name: k8slabel, label: k8slabel, yaml: slavePodTemplate, showRawYaml: false) {
