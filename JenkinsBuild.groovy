@@ -35,7 +35,7 @@ def slavePodTemplate = """
             hostPath:
               path: /var/run/docker.sock
     """
-    def environemnt = ""
+    def environment = ""
     def branch = "${scm.branches[0].name}".replaceAll(/^\*\//, '').replace("/", "-").toLowerCase()
     def environment = ""
     def branch = "master" 
@@ -75,7 +75,7 @@ def slavePodTemplate = """
                   build job: 'artemis-deploy', 
                   parameters: [
                       [$class: 'BooleanParameterValue', name: 'terraformApply', value: true],
-                      [$class: 'StringParameterValue',  name: 'environment', value: "{environmet"]
+                      [$class: 'StringParameterValue',  name: 'environment', value: "${environment}"]
                       ]
                   }
                 }
